@@ -1,11 +1,9 @@
-﻿using MediatR;
+﻿using MediatR.Shared.Behaviours;
+using MediatR.Shared.Validation;
 using Microsoft.Extensions.DependencyInjection;
-using Multigate.Titanic.MediatR.Shared.Behaviours;
-using Multigate.Titanic.MediatR.Shared.Caching;
-using Multigate.Titanic.MediatR.Shared.Validation;
 using System.Reflection;
 
-namespace Multigate.Titanic.MediatR.Shared
+namespace MediatR.Shared
 {
     public static class IServiceCollectionExtentions
     {
@@ -14,7 +12,7 @@ namespace Multigate.Titanic.MediatR.Shared
             AddValidators(services, assemblies);
             AddPipelineBehaviours(services);
             services.AddMediatR(assemblies);
-            
+
             return services;
         }
 

@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Multigate.Titanic.MediatR.Shared.Entities
+namespace MediatR.Shared.Entities
 {
     public abstract class CqrsResponse
     {

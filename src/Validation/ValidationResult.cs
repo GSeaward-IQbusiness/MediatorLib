@@ -1,4 +1,4 @@
-﻿namespace Multigate.Titanic.MediatR.Shared.Validation
+﻿namespace MediatR.Shared.Validation
 {
     public class ValidationResult
     {

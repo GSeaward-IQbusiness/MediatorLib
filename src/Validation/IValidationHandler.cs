@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Multigate.Titanic.MediatR.Shared.Validation
+namespace MediatR.Shared.Validation
 {
     public interface IValidationHandler { }
     public interface IValidationHandler<T> : IValidationHandler

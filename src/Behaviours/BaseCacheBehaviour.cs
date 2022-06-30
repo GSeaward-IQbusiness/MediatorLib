@@ -1,12 +1,12 @@
 ﻿using MediatR;
+using MediatR.Shared.Caching;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using Multigate.Titanic.MediatR.Shared.Caching;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Multigate.Titanic.MediatR.Shared.Behaviours
+namespace MediatR.Shared.Behaviours
 {
     public abstract class BaseCacheBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>, ICachable
@@ -34,7 +34,7 @@ namespace Multigate.Titanic.MediatR.Shared.Behaviours
             _logger.LogInformation("{request} cache key {cacheKey} is not in the cache, executing request", requestName, request.CacheKey);
             response = await next();
 
-            if(response != null)
+            if (response != null)
                 _cache.Set(request.CacheKey, response, TimeSpan.FromMinutes(GetCacheDuration()));
             return response;
         }

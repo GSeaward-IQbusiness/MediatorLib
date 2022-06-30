@@ -1,11 +1,11 @@
 ﻿using MediatR;
+using MediatR.Shared.Entities;
+using MediatR.Shared.Validation;
 using Microsoft.Extensions.Logging;
-using Multigate.Titanic.MediatR.Shared.Entities;
-using Multigate.Titanic.MediatR.Shared.Validation;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Multigate.Titanic.MediatR.Shared.Behaviours
+namespace MediatR.Shared.Behaviours
 {
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>

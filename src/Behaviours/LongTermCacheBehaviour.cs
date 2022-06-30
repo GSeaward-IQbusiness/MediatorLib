@@ -1,10 +1,10 @@
 ﻿using MediatR;
+using MediatR.Shared.Caching;
+using MediatR.Shared.Constants;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using Multigate.Titanic.MediatR.Shared.Caching;
-using Multigate.Titanic.MediatR.Shared.Constants;
 
-namespace Multigate.Titanic.MediatR.Shared.Behaviours
+namespace MediatR.Shared.Behaviours
 {
     public class LongTermCacheBehaviour<TRequest, TResponse> : BaseCacheBehaviour<TRequest, TResponse>
         where TRequest : IRequest<TResponse>, ILongTermCachable

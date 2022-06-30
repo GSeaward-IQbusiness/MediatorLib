@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Multigate.Titanic.MediatR.Shared.Behaviours
 {
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+        where TRequest : IRequest<TResponse>
         where TResponse : CqrsResponse, new()
     {
         private readonly ILogger<ValidationBehavior<TRequest, TResponse>> _logger;

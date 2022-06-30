@@ -2,18 +2,14 @@
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Multigate.Titanic.MediatR.Shared.Caching;
-using Multigate.Titanic.MediatR.Shared.Constants;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Multigate.Titanic.MediatR.Shared.Behaviours
 {
     public abstract class BaseCacheBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : ICachable
+        where TRequest : IRequest<TResponse>, ICachable
     {
         private readonly IMemoryCache _cache;
         private readonly ILogger<BaseCacheBehaviour<TRequest, TResponse>> _logger;
